@@ -1,1 +1,12 @@
-# ANESTDAT
+SEMANA 1: INTRODUCCIÓN A LA ESTRUCTURA DE DATOS
+
+Bit: es la unidad mínima de información de 0 a 1
+Byte: es el conjunto de 8 bits
+
+UTILIDAD: es fundamental para poder organizar información que permitirá la eficacia del sistema.
+¿QUE ES?: es organizar y almacenar datos dentro de un equipo(computadora)
+TIPOS DE ESTRUCTURAS:
+DINÁMICAS: NO SE PUEDE CAMBIAR DURANTE LA EJECUCIÓN DEL PROGRAMA
+ESTÁTICAS: SE PUEDE CAMBIAR DURANTE LA EJECUCIÓN DEL PROGRAMA
+  LINEALES: listas enlazadas, pilas, colas
+  NO LINEALES: arboles, grafos
