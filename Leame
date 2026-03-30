@@ -20,5 +20,6 @@ UTILIDAD: son esenciales para organizar informacio debido a su tamaño fijo defi
           rapidez de acceso a los elementos y simplicidad.
 VENTAJAS: es más ventajoso que otras estructuras de datos (como listas enlazadas, mapas hash o árboles)
           en situaciones donde se requiere máxima velocidad de acceso, eficiencia en memoria y el tamaño del conjunto de datos es conocido o estable.
+OjO, se simula un nuevo elemento dentro del arreglo al igual que la eliminación de ello.
 
 
