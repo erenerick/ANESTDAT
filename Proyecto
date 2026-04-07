@@ -1,2 +1,117 @@
 //Sistema de Gestion de Notas//
 
+SEMANA 1: 
+
+import java.util.ArrayList;
+
+public class Estudiante {
+    private String codigo;
+    private String nombre;
+    private ArrayList<Double> notas;
+
+    public Estudiante(String codigo, String nombre) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.notas = new ArrayList<>();
+    }
+
+    public void agregarNota(double nota) {
+        notas.add(nota);
+    }
+
+    public double calcularPromedio() {
+        double suma = 0;
+        for (double n : notas) {
+            suma += n;
+        }
+
+---------------------------
+
+import java.util.*;
+
+public class GestorEstudiantes {
+    private ArrayList<Estudiante> lista;
+    private HashMap<String, Estudiante> mapa;
+
+    public GestorEstudiantes() {
+        lista = new ArrayList<>();
+        mapa = new HashMap<>();
+    }
+
+    public void agregarEstudiante(Estudiante e) {
+        lista.add(e);
+        mapa.put(e.getCodigo(), e);
+    }
+
+    public Estudiante buscar(String codigo) {
+        return mapa.get(codigo);
+    }
+
+    public void mostrarTodos() {
+        for (Estudiante e : lista) {
+            System.out.println(e);
+        }
+    }
+
+    public void ranking() {
+        lista.sort((a, b) -> Double.compare(b.calcularPromedio(), a.calcularPromedio()));
+        mostrarTodos();
+    }
+}
+
+-------------------------
+
+import java.util.Scanner;
+
+public class Menu {
+    private static Scanner sc = new Scanner(System.in);
+    private static GestorEstudiantes gestor = new GestorEstudiantes();
+
+    public static void mostrar() {
+        int op;
+
+        do {
+            System.out.println("\n1. Registrar estudiante");
+            System.out.println("2. Agregar nota");
+            System.out.println("3. Mostrar estudiantes");
+            System.out.println("4. Ranking");
+            System.out.println("0. Salir");
+
+            op = sc.nextInt();
+
+            switch (op) {
+                case 1:
+                    System.out.print("Codigo: ");
+                    String cod = sc.next();
+                    System.out.print("Nombre: ");
+                    String nom = sc.next();
+
+                    gestor.agregarEstudiante(new Estudiante(cod, nom));
+                    break;
+
+                case 2:
+                    System.out.print("Codigo: ");
+                    cod = sc.next();
+                    Estudiante e = gestor.buscar(cod);
+
+                    if (e != null) {
+                        System.out.print("Nota: ");
+                        double nota = sc.nextDouble();
+                        e.agregarNota(nota);
+                    } else {
+                        System.out.println("No existe");
+                    }
+                    break;
+
+                case 3:
+                    gestor.mostrarTodos();
+                    break;
+
+                case 4:
+                    gestor.ranking();
+                    break;
+            }
+
+        } while (op != 0);
+    }
+}
