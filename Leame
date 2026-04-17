@@ -22,4 +22,108 @@ VENTAJAS: es más ventajoso que otras estructuras de datos (como listas enlazada
           en situaciones donde se requiere máxima velocidad de acceso, eficiencia en memoria y el tamaño del conjunto de datos es conocido o estable.
 OjO, se simula un nuevo elemento dentro del arreglo al igual que la eliminación de ello.
 
+SEMANA 3:
 
+
+SEMANA 4:
+PRACTICA LABORATORIO
+import java.util.Scanner;
+
+public class MatrizSimple {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = 3;
+        int[][] A = new int[n][n];
+        int[][] B = new int[n][n];
+        int[][] suma = new int[n][n];
+        int[][] multiplicacion = new int[n][n];
+
+        // 1. Ingreso de matrices
+        System.out.println("Ingrese matriz A:");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print("A[" + i + "][" + j + "]: ");
+                A[i][j] = sc.nextInt();
+            }
+        }
+
+        System.out.println("\nIngrese matriz B:");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print("B[" + i + "][" + j + "]: ");
+                B[i][j] = sc.nextInt();
+            }
+        }
+
+        // Mostrar matriz A
+        System.out.println("\nMatriz A:");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(A[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        // 2. Verificar si es diagonal
+        boolean esDiagonal = true;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i != j && A[i][j] != 0) {
+                    esDiagonal = false;
+                }
+            }
+        }
+
+        if (esDiagonal) {
+            System.out.println("\nLa matriz A es DIAGONAL");
+        } else {
+            System.out.println("\nLa matriz A NO es diagonal");
+        }
+
+        // 3. Suma de matrices
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                suma[i][j] = A[i][j] + B[i][j];
+            }
+        }
+
+        System.out.println("\nSuma A + B:");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(suma[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        // 🔥 MULTIPLICACIÓN DE MATRICES (lo que faltaba)
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                multiplicacion[i][j] = 0;
+                for (int k = 0; k < n; k++) {
+                    multiplicacion[i][j] += A[i][k] * B[k][j];
+                }
+            }
+        }
+
+        System.out.println("\nMultiplicación A * B:");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(multiplicacion[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        // 4. Transpuesta
+        System.out.println("\nTranspuesta de A:");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(A[j][i] + " ");
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
