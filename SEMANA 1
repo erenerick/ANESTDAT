@@ -1,1 +1,46 @@
+SEMANA 1: INTRODUCCIÓN A LA ESTRUCTURA DE DATOS
+Conceptos básicos
+Bit: Es la unidad mínima de información en computación. Solo puede tener dos valores: 0 o 1.
+Byte: Es un conjunto de 8 bits y permite representar un carácter o símbolo.
+¿Qué es una estructura de datos?
 
+Es una forma de organizar, almacenar y gestionar datos dentro de una computadora, con el objetivo 
+de facilitar su acceso, procesamiento y uso eficiente.
+
+Utilidad
+Las estructuras de datos son fundamentales porque permiten:
+
+Organizar la información de manera lógica.
+Optimizar el rendimiento de los programas.
+Facilitar la búsqueda, inserción y eliminación de datos.
+Mejorar la eficiencia de los sistemas informáticos.
+Tipos de estructuras de datos
+1. Según el tipo de almacenamiento
+Estructuras estáticas:
+Su tamaño se define antes de la ejecución del programa.
+No cambia durante la ejecución.
+Ejemplo: arreglos (arrays).
+Estructuras dinámicas:
+Su tamaño puede cambiar durante la ejecución del programa.
+Permiten mayor flexibilidad en el manejo de datos.
+Ejemplo: listas enlazadas.
+
+Las dinámicas sí pueden cambiar durante la ejecución, mientras que las estáticas no.
+
+2. Según su organización
+Estructuras lineales:
+Los datos se organizan de forma secuencial, uno después de otro.
+Ejemplos:
+Listas enlazadas
+Pilas (LIFO: último en entrar, primero en salir)
+Colas (FIFO: primero en entrar, primero en salir)
+Estructuras no lineales:
+Los datos no siguen una secuencia única, sino que se organizan de forma jerárquica o en red.
+Ejemplos:
+Árboles (estructura jerárquica)
+Grafos (relaciones complejas entre elementos)
+Conclusión
+
+Las estructuras de datos son esenciales en programación, ya que permiten organizar y manejar la 
+información de forma eficiente. Elegir la estructura adecuada influye directamente en el rendimiento
+y funcionamiento de un sistema.
