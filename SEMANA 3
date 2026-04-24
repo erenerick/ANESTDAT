@@ -1,1 +1,42 @@
+SEMANA 3: OPERACIONES CON ARREGLOS UNIDIMENSIONALES
+Conocimientos previos
+¿Qué es un arreglo unidimensional?
+Es una estructura de datos que almacena elementos del mismo tipo en una sola dimensión,
+organizados mediante índices consecutivos.
+¿Cómo se declara?
+Se define indicando el tipo de dato y el tamaño del arreglo, el cual es fijo.
+¿Cómo acceder a un elemento específico?
+Se accede mediante su índice, comenzando desde 0.
+Ejemplo conceptual: el tercer elemento está en la posición 2.
+¿Qué ocurre si se accede a un índice fuera de los límites?
+Se produce un error en tiempo de ejecución, ya que se intenta acceder a una posición 
+inexistente del arreglo.
+Operaciones básicas
+Recorrido:
+Permite acceder a todos los elementos del arreglo utilizando estructuras repetitivas 
+como for o while.
+Búsqueda:
+Permite encontrar un valor dentro del arreglo recorriendo sus elementos.
+Inserción:
+No es directa; requiere desplazar elementos o crear un nuevo arreglo.
+Eliminación:
+También implica reorganizar los elementos o generar un nuevo arreglo.
+Utilidad
+¿Cómo se usa para almacenar números?
+Permite guardar múltiples valores en una sola estructura, organizados por posiciones.
+¿Por qué es útil para manejar datos del mismo tipo?
+Porque facilita su procesamiento, permitiendo aplicar operaciones de manera uniforme a
+todos los elementos.
+¿Cómo ayuda a organizar los datos?
+Los arreglos permiten:
+Acceso rápido mediante índices.
+Orden y estructura en la información.
+Facilidad para recorrer y procesar datos.
+Ventajas
+Acceso rápido a cualquier elemento (tiempo constante).
+Simplicidad en su uso.
+Eficiencia cuando el tamaño de datos es conocido.
+Conclusión
 
+Los arreglos unidimensionales son una estructura fundamental para manejar colecciones de 
+datos de manera organizada y eficiente, especialmente cuando se requiere acceso rápido y el tamaño es fijo.
