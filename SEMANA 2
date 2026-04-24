@@ -1,1 +1,42 @@
+SEMANA 2: ESTRUCTURAS DE DATOS ESTÁTICAS
+Arreglo unidimensional
+Un arreglo unidimensional es una estructura de datos estática que almacena elementos del 
+mismo tipo en posiciones consecutivas de memoria. Se organiza como una fila o columna y
+cada elemento se accede mediante un índice numérico.
 
+Características principales
+Tamaño fijo: Se define antes de la ejecución del programa y no puede cambiar.
+Índices: Comienzan desde 0, por lo que el tercer elemento se encuentra en la posición 2.
+Acceso directo: Permite acceder a cualquier elemento de manera inmediata.
+Tiempo de acceso
+El acceso a los elementos de un arreglo es de tiempo constante (O(1)), lo que significa que
+no importa el tamaño del arreglo, el tiempo para acceder a un elemento es el mismo.
+
+Operaciones básicas
+Recorrido:
+Se realiza mediante estructuras repetitivas como:
+for
+for each
+while
+
+Permite leer, mostrar o procesar todos los elementos del arreglo.
+
+Utilidad
+Los arreglos son fundamentales para organizar información cuando se conoce previamente la cantidad de datos. Su uso permite:
+
+Alta eficiencia en memoria.
+Rapidez en el acceso a los elementos.
+Simplicidad en su implementación.
+Ventajas
+Acceso rápido a los datos.
+Bajo consumo de memoria en comparación con estructuras dinámicas.
+Fácil implementación y manejo.
+Ideal cuando el tamaño de los datos es constante o predecible.
+Limitaciones
+No se puede cambiar su tamaño durante la ejecución.
+Inserciones y eliminaciones no son directas.
+Para agregar o eliminar elementos, se debe “simular” creando un nuevo arreglo y copiando los datos.
+
+Conclusión
+Los arreglos unidimensionales son una estructura eficiente y sencilla para manejar datos cuando el 
+tamaño es fijo. Su principal fortaleza es la rapidez de acceso, aunque presentan limitaciones en flexibilidad al momento de modificar su tamaño.
