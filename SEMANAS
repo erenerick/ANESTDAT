@@ -12,20 +12,25 @@ LINEALES: listas enlazadas, pilas, colas
 NO LINEALES: arboles, grafos
 
 SEMANA 2: ESTRUCTURA DE DATOS ESTATICAS
-Arreglo unidimensional: es de tipo estatico, organizado en fila o columna mediante indices numericos. Tiempo constante
-Tercer Elemento: utilizando el nombre del arreglo y entre los corchete [2], dado que los arreglos empieza en 0
-Operaciones de recorrido: la operación fundamental es la iteración a través de una estructura de control repetitiva o bucle, mediante el for, for each, while
+Arreglo unidimensional: es de tipo estatico, organizado en fila o columna mediante indices numericos. 
+Tiempo constante
+Tercer Elemento: utilizando el nombre del arreglo y entre los corchete [2], dado que los arreglos 
+empieza en 0
+Operaciones de recorrido: la operación fundamental es la iteración a través de una estructura de control 
+repetitiva o bucle, mediante el for, for each, while
 
-UTILIDAD: son esenciales para organizar informacio debido a su tamaño fijo definido antes de la ejecucion. Ademas que radica en la eficiencia de memoria,
+UTILIDAD: son esenciales para organizar informacio debido a su tamaño fijo definido antes de la ejecucion. 
+Ademas que radica en la eficiencia de memoria,
           rapidez de acceso a los elementos y simplicidad.
 VENTAJAS: es más ventajoso que otras estructuras de datos (como listas enlazadas, mapas hash o árboles)
-          en situaciones donde se requiere máxima velocidad de acceso, eficiencia en memoria y el tamaño del conjunto de datos es conocido o estable.
+          en situaciones donde se requiere máxima velocidad de acceso, eficiencia en memoria y el tamaño 
+del conjunto de datos es conocido o estable.
 OjO, se simula un nuevo elemento dentro del arreglo al igual que la eliminación de ello.
 
-SEMANA 3:
+SEMANA 3: OPERACIONES CON ARREGLOS UNIDIMENSIONALES
 
 
-SEMANA 4:
+SEMANA 4:OPERACIONES CON ARREGLOS BIDIMENSIONALES
 PRACTICA LABORATORIO
 import java.util.Scanner;
 
