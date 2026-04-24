@@ -1,1 +1,37 @@
+SEMANA 4: OPERACIONES CON ARREGLOS BIDIMENSIONALES
+Conocimientos previos
+¿Cómo se declara e inicializa una matriz cuadrada?
+Una matriz es un arreglo bidimensional organizado en filas y columnas.
+Una matriz cuadrada tiene el mismo número de filas y columnas (n x n).
+¿Qué es una matriz triangular inferior?
+Es una matriz donde todos los elementos por encima de la diagonal principal son cero.
+Solo contiene valores en la diagonal principal y por debajo de ella.
+¿Diferencia entre matriz simétrica y asimétrica?
+Matriz simétrica: Es aquella donde los elementos son iguales respecto a la diagonal principal.
+Matriz asimétrica: No cumple esa propiedad; los valores no son iguales al reflejarse.
+Operaciones básicas
+Recorrido:
+Se realiza mediante estructuras repetitivas anidadas (por filas y columnas).
+Suma y resta de matrices:
+Se realiza elemento a elemento, siempre que tengan las mismas dimensiones.
+Multiplicación de matrices:
+Se realiza combinando filas de una matriz con columnas de otra.
+Utilidad
+¿Para qué es útil una matriz triangular inferior?
+Se utiliza en cálculos matemáticos y algoritmos donde se requiere reducir operaciones, 
+ya que muchos valores son cero.
+¿Cómo ayuda una matriz tridiagonal a ahorrar memoria?
+Una matriz tridiagonal solo almacena valores en la diagonal principal y en las diagonales adyacentes, 
+reduciendo el uso de memoria al evitar almacenar ceros innecesarios.
+¿Por qué usar una matriz simétrica?
+Porque permite optimizar el almacenamiento y cálculos, ya que solo es necesario trabajar 
+con la mitad de la matriz (la otra es igual).
+Ventajas
+Permiten representar datos en forma de tablas.
+Son útiles para problemas matemáticos, gráficos y científicos.
+Facilitan la organización de datos en dos dimensiones.
+Conclusión
 
+Los arreglos bidimensionales son fundamentales para trabajar con datos estructurados en filas y columnas. 
+Su uso permite resolver problemas complejos de forma organizada y eficiente, optimizando tanto
+el procesamiento como el almacenamiento de información.
