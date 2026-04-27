@@ -1,0 +1,34 @@
+SEMANA 6: ESTRUCTURAS DE DATOS DINÁMICAS
+¿Qué son?
+Son estructuras de datos cuyo tamaño puede cambiar
+durante la ejecución del programa, permitiendo almacenar 
+una cantidad variable de elementos según sea necesario.
+Características principales
+Tamaño flexible (crece o disminuye en ejecución).
+Uso eficiente de memoria (se asigna según necesidad).
+Los elementos se conectan mediante referencias (enlaces).
+Tipos principales
+Listas enlazadas:
+Conjunto de nodos conectados entre sí. Cada nodo contiene 
+un dato y una referencia al siguiente.
+Pilas (Stack):
+Estructura LIFO (último en entrar, primero en salir).
+Colas (Queue):
+Estructura FIFO (primero en entrar, primero en salir).
+Utilidad
+Permiten manejar datos cuyo tamaño es desconocido.
+Facilitan inserciones y eliminaciones sin reorganizar toda 
+la estructura.
+Son clave en aplicaciones dinámicas como sistemas en tiempo real.
+Ventajas
+Flexibilidad en el manejo de datos.
+Mejor uso de memoria en comparación con estructuras estáticas.
+Inserciones y eliminaciones más eficientes en muchos casos.
+Desventajas
+Acceso más lento que en arreglos.
+Mayor complejidad en implementación.
+Uso adicional de memoria por referencias.
+Conclusión
+Las estructuras de datos dinámicas permiten desarrollar sistemas
+más flexibles y escalables, adaptándose a cambios en la cantidad 
+de datos durante la ejecución del programa.
