@@ -1,34 +1,240 @@
-SEMANA 6: ESTRUCTURAS DE DATOS DINÁMICAS
-¿Qué son?
-Son estructuras de datos cuyo tamaño puede cambiar
-durante la ejecución del programa, permitiendo almacenar 
-una cantidad variable de elementos según sea necesario.
-Características principales
-Tamaño flexible (crece o disminuye en ejecución).
-Uso eficiente de memoria (se asigna según necesidad).
-Los elementos se conectan mediante referencias (enlaces).
-Tipos principales
-Listas enlazadas:
-Conjunto de nodos conectados entre sí. Cada nodo contiene 
-un dato y una referencia al siguiente.
-Pilas (Stack):
-Estructura LIFO (último en entrar, primero en salir).
-Colas (Queue):
-Estructura FIFO (primero en entrar, primero en salir).
-Utilidad
-Permiten manejar datos cuyo tamaño es desconocido.
-Facilitan inserciones y eliminaciones sin reorganizar toda 
-la estructura.
-Son clave en aplicaciones dinámicas como sistemas en tiempo real.
-Ventajas
-Flexibilidad en el manejo de datos.
-Mejor uso de memoria en comparación con estructuras estáticas.
-Inserciones y eliminaciones más eficientes en muchos casos.
-Desventajas
-Acceso más lento que en arreglos.
-Mayor complejidad en implementación.
-Uso adicional de memoria por referencias.
-Conclusión
-Las estructuras de datos dinámicas permiten desarrollar sistemas
-más flexibles y escalables, adaptándose a cambios en la cantidad 
-de datos durante la ejecución del programa.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ColaArreglo colaA = new ColaArreglo();
+        ColaLista colaL = new ColaLista();
+        ColaPrioridad colaP = new ColaPrioridad();
+
+        int tipo, opcion;
+
+        do {
+            System.out.println("\n--- SELECCIONE TIPO DE COLA ---");
+            System.out.println("1. Cola Arreglo Circular");
+            System.out.println("2. Cola Lista Enlazada");
+            System.out.println("3. Cola con Prioridad");
+            System.out.println("4. Salir");
+            System.out.print("Opcion: ");
+            tipo = sc.nextInt();
+
+            if (tipo == 4) break;
+
+            do {
+                System.out.println("\n1. Encolar");
+                System.out.println("2. Desencolar");
+                System.out.println("3. Volver");
+                System.out.print("Opcion: ");
+                opcion = sc.nextInt();
+
+                switch (tipo) {
+
+                    // arreglo
+                    case 1:
+                        if (opcion == 1) {
+                            System.out.print("Valor: ");
+                            int v = sc.nextInt();
+                            colaA.enqueue(v);
+                            colaA.mostrar();
+                        } else if (opcion == 2) {
+                            int x = colaA.dequeue();
+                            if (x != -1) System.out.println("Se quitó: " + x);
+                            colaA.mostrar();
+                        }
+                        break;
+
+                    // lista
+                    case 2:
+                        if (opcion == 1) {
+                            System.out.print("Valor: ");
+                            int v = sc.nextInt();
+                            colaL.enqueue(v);
+                            colaL.mostrar();
+                        } else if (opcion == 2) {
+                            int x = colaL.dequeue();
+                            if (x != -1) System.out.println("Se quitó: " + x);
+                            colaL.mostrar();
+                        }
+                        break;
+
+                    // prioridad
+                    case 3:
+                        if (opcion == 1) {
+                            System.out.print("Valor: ");
+                            int v = sc.nextInt();
+                            System.out.print("Prioridad: ");
+                            int p = sc.nextInt();
+                            colaP.enqueue(v, p);
+                            colaP.mostrar();
+                        } else if (opcion == 2) {
+                            int x = colaP.dequeue();
+                            if (x != -1) System.out.println("Se quitó: " + x);
+                            colaP.mostrar();
+                        }
+                        break;
+                }
+
+            } while (opcion != 3);
+
+        } while (true);
+
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+class ColaPrioridad {
+    int[] valores = new int[5];
+    int[] prioridad = new int[5];
+    int n = 0;
+
+    void enqueue(int v, int p) {
+        if (n == valores.length) {
+            System.out.println("Cola llena");
+            return;
+        }
+
+        valores[n] = v;
+        prioridad[n] = p;
+        n++;
+    }
+
+    int dequeue() {
+        if (n == 0) {
+            System.out.println("Cola vacía");
+            return -1;
+        }
+
+        int mayor = 0;
+        for (int i = 1; i < n; i++) {
+            if (prioridad[i] > prioridad[mayor]) {
+                mayor = i;
+            }
+        }
+
+        int valor = valores[mayor];
+
+        // mover elementos
+        for (int i = mayor; i < n - 1; i++) {
+            valores[i] = valores[i + 1];
+            prioridad[i] = prioridad[i + 1];
+        }
+
+        n--;
+        return valor;
+    }
+
+    void mostrar() {
+        if (n == 0) {
+            System.out.println("Cola vacía");
+            return;
+        }
+
+        System.out.print("Cola: ");
+        for (int i = 0; i < n; i++) {
+            System.out.print(valores[i] + "(p=" + prioridad[i] + ") ");
+        }
+        System.out.println();
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+class ColaLista {
+    Nodo frente = null;
+    Nodo fin = null;
+
+    // Agregar
+    void enqueue(int x) {
+        Nodo nuevo = new Nodo(x);
+
+        if (frente == null) {
+            frente = fin = nuevo;
+        } else {
+            fin.sig = nuevo;
+            fin = nuevo;
+        }
+    }
+
+    // Quitar
+    int dequeue() {
+        if (frente == null) {
+            System.out.println("Cola vacía");
+            return -1;
+        }
+
+        int valor = frente.dato;
+        frente = frente.sig;
+
+        if (frente == null) {
+            fin = null;
+        }
+
+        return valor;
+    }
+
+    // Mostrar
+    void mostrar() {
+        if (frente == null) {
+            System.out.println("Cola vacía");
+            return;
+        }
+
+        System.out.print("Cola: ");
+        Nodo aux = frente;
+
+        while (aux != null) {
+            System.out.print(aux.dato + " ");
+            aux = aux.sig;
+        }
+
+        System.out.println();
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+class ColaArreglo {
+    int[] cola = new int[5];
+    int frente = 0;
+    int fin = 0;
+    int tamaño = 0;
+
+    void enqueue(int x) {
+        if (tamaño == 5) {
+            System.out.println("Cola llena");
+        } else {
+            cola[fin] = x;
+            fin = (fin + 1) % 5;
+            tamaño++;
+        }
+    }
+
+    int dequeue() {
+        if (tamaño == 0) {
+            System.out.println("Cola vacía");
+            return -1;
+        } else {
+            int valor = cola[frente];
+            frente = (frente + 1) % 5; 
+            tamaño--;
+            return valor;
+        }
+    }
+
+    void mostrar() {
+        if (tamaño == 0) {
+            System.out.println("Cola vacía");
+        } else {
+            System.out.print("Cola: ");
+            for (int i = 0; i < tamaño; i++) {
+                int pos = (frente + i) % 5;
+                System.out.print(cola[pos] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
