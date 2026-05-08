@@ -1,0 +1,51 @@
+package colitas;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author LAB-USR-AREQUIPA
+ */
+public class Colitas {
+
+   public static void main(String[] args) {
+       
+       Scanner sc = new Scanner(System.in);
+       
+       ColaArreglo colaA = new ColaArreglo();
+       
+       int opcion;
+       
+       do{
+           System.out.println("1. Encolar");
+           System.out.println("2. Desencolar");
+           System.out.println("3. Salir");
+           System.out.println(" Opcion ");
+           opcion = sc.nextInt();
+           
+           switch(opcion){
+               
+               case 1:
+        
+                  System.out.println("Valor");
+                  int v = sc.nextInt();
+                  colaA.enqueue(v);
+                  colaA.mostrar();
+                  
+                   break;
+         
+               case 2:    
+                   int x = colaA.dequeue();
+                   colaA.mostrar();
+           
+                    break;
+               case 3: 
+
+                   System.out.println("Saliendo");
+                    break;
+                   
+           }
+           
+       }while(opcion !=3);
+   }
+}
